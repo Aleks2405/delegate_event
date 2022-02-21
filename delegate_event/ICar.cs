@@ -10,14 +10,8 @@ namespace delegate_event
     {
         int Count { get; set; }
         string Name { get; }
-         int speed()
-        { 
-            return 0;
-        }
-        int casd()
-        {
-            return 0;
-        }
+        int speed();
+        int casd();
         public virtual string ToString()
         {
             return $"{Name} = {Count}";

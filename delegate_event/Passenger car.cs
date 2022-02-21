@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace delegate_event
 {
-    class Passenger_car :ICar
+    class Passenger_car :ICar, IComparable
     {
         public int Count { get; set; } = 0;
         public int a;
-        public delegate void POexali(); 
+        public delegate void POexali();
+        public int skorost { get; } = 100;
 
         public string Name { get;  } = "Passenger car"; 
         
@@ -24,31 +25,37 @@ namespace delegate_event
             }
             else
             {
-                Console.WriteLine(  "кидаем исключение");
+                throw new Exception("кинули исключение");
             }
                               
         }
         public void poexali ()
         {            
-                while (a <= 100)
+                while (a <= skorost)          
                 {
                     a += speed();                    
                     Count++;
                 }           
         }
        
-     public int speed ()
+     public int speed ()             // задаем скорость автомобиля
         {
            int a = new Random().Next(15);
             return a;
         }
-        public int casd()
+        public int casd()    // возвращаем значения нашего счетика у кого меньше тот и выиграл
         {
             return Count;
         }
         public override string ToString()
         {
             return $"{Name} = {Count}";
+        }
+
+        public int CompareTo(object? o)
+        {
+            if (o is Passenger_car a) return Count.CompareTo(a.Count);
+            else throw new ArgumentException("Некорректное значение параметра");
         }
     }
 }

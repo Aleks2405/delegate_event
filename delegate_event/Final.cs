@@ -8,7 +8,9 @@ namespace delegate_event
 {
     class Final
     {
-        public int Const { get; } = 0;
+        public int Const { get; } = 0;  // точка старта
+        public int Temp { get; } = 1;
+        public int temp;
         public Final()
         {
             ICar[] a =
@@ -26,11 +28,19 @@ namespace delegate_event
 
                 Console.WriteLine(asa);
             }
-            for (int i = 0; i < a.Length; i++)
-            {
-                //Array.Sort();
-                Console.WriteLine(a[i].casd()); 
-            }
+            //for (int i = 0; i < a.Length; i++)
+            // {
+            //     if (a[i].casd() > temp)
+            //     {
+
+            //     }
+            // }
+
+            //foreach (ICar asa in saa)
+            //{
+
+            //    Console.WriteLine(asa);
+            //}
 
         }
 
