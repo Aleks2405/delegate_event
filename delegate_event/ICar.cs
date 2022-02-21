@@ -14,6 +14,10 @@ namespace delegate_event
         { 
             return 0;
         }
+        int casd()
+        {
+            return 0;
+        }
         public virtual string ToString()
         {
             return $"{Name} = {Count}";

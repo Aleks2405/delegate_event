@@ -8,7 +8,7 @@ namespace delegate_event
 {
     class Final
     {
-        public int Const { get; set; } = 0;
+        public int Const { get; } = 0;
         public Final()
         {
             ICar[] a =
@@ -18,16 +18,18 @@ namespace delegate_event
                 new Truck(Const),
                 new Bus(Const)
             };
-            
 
-            //foreach (ICar asa in a)
-            //{
 
-            //    Console.WriteLine(asa);
-            //}
-            for (int i = 0;i < a.Length; i++)
+
+            foreach (ICar asa in a)
             {
-                
+
+                Console.WriteLine(asa);
+            }
+            for (int i = 0; i < a.Length; i++)
+            {
+                //Array.Sort();
+                Console.WriteLine(a[i].casd()); 
             }
 
         }

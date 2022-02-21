@@ -42,6 +42,10 @@ namespace delegate_event
            int a = new Random().Next(15);
             return a;
         }
+        public int casd()
+        {
+            return Count;
+        }
         public override string ToString()
         {
             return $"{Name} = {Count}";
