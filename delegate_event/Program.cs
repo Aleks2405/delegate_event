@@ -11,17 +11,8 @@ namespace delegate_event
         static void Main(string[] args)
         {
 
-            ICar[] a =
-            {
-                new Passenger_car(0),
-                new Sports_car(0)
-            };
-           
-            foreach (ICar asa in a)
-            {
-                
-                Console.WriteLine(asa);
-            }
+
+            Final a = new Final();
 
 
 
