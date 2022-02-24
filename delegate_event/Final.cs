@@ -8,9 +8,21 @@ namespace delegate_event
 {
     class Final
     {
+        public delegate void Number();
+        public event Number Shethic; 
         public int Const { get; } = 0;  // точка старта
-        public int Temp { get; } = 1;
+       
         private int temp = 4; /*Машин учавствующих в гонке*/
+
+        public void IIII()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine(i);
+                Shethic?.Invoke();
+            }
+        }
+
         public Final()
         {
             this.temp = temp;
@@ -24,19 +36,24 @@ namespace delegate_event
             };
              for (int i = 0; i < 4; i++)
             {
-                a = a.OrderBy(b => b.Count).ToList(); // метод сортировки придуман теперь красиво
+                a = a.OrderBy(b => b.Count).ToList(); // метод сортировки найден теперь красиво
 
             }
-
+            Shethic += Final_Shethic;       // нужно обьяснения( желательно показать на примере кода биться саму уже не хватает нервов )
+                                            // я понял зачем нужны делегаты но не понимаю зачем нужны события они все только усложняют      
 
             foreach (ICar asa in a)
             {
 
-                Console.WriteLine($"Finish = {asa}");
+                Console.WriteLine($"Finish = {asa} ");
             }
          
-
+            
         }
 
+        private void Final_Shethic()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

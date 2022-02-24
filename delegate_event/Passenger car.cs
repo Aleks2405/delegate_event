@@ -11,7 +11,7 @@ namespace delegate_event
         public int Count { get; set; } = 0;
         public int a;
         public delegate void POexali();
-        public event POexali op;
+        public event POexali op = null;
         public int skorost { get; } = 100;
 
         public string Name { get;  } = "Passenger car"; 
@@ -21,8 +21,9 @@ namespace delegate_event
             this.a = a;
             if (a == 0)
             {
-                POexali op = new(poexali);
-                op.Invoke();
+                /*POexali op = new(poexali)  убрал делегат использую сабытие*/
+                poexali();
+                op?.Invoke();
             }
             else
             {
