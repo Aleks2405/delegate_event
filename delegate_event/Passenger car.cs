@@ -11,6 +11,7 @@ namespace delegate_event
         public int Count { get; set; } = 0;
         public int a;
         public delegate void POexali();
+        public event POexali op;
         public int skorost { get; } = 100;
 
         public string Name { get;  } = "Passenger car"; 
@@ -49,7 +50,7 @@ namespace delegate_event
         }
         public override string ToString()
         {
-            return $"{Name} = {Count}";
+            return $"{Name}";
         }
 
         public int CompareTo(object? o)

@@ -17,7 +17,7 @@ namespace delegate_event
 
         public override string ToString()
         {
-            return $"{Name} = {Count}";
+            return $"{Name}";
         }
     }
 }

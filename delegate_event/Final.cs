@@ -10,37 +10,31 @@ namespace delegate_event
     {
         public int Const { get; } = 0;  // точка старта
         public int Temp { get; } = 1;
-        public int temp;
+        private int temp = 4; /*Машин учавствующих в гонке*/
         public Final()
         {
-            ICar[] a =
-              {
+            this.temp = temp;
+
+            var a = new List<ICar>()
+            {
                 new Passenger_car(Const),
                 new Sports_car(Const),
                 new Truck(Const),
                 new Bus(Const)
             };
+             for (int i = 0; i < 4; i++)
+            {
+                a = a.OrderBy(b => b.Count).ToList(); // метод сортировки придуман теперь красиво
 
+            }
 
 
             foreach (ICar asa in a)
             {
 
-                Console.WriteLine(asa);
+                Console.WriteLine($"Finish = {asa}");
             }
-            //for (int i = 0; i < a.Length; i++)
-            // {
-            //     if (a[i].casd() > temp)
-            //     {
-
-            //     }
-            // }
-
-            //foreach (ICar asa in saa)
-            //{
-
-            //    Console.WriteLine(asa);
-            //}
+         
 
         }
 
