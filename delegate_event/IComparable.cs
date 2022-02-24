@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace delegate_event
 {
-    interface IComparable
-    {
-        int CompareTo(object? o);
+    interface IComparable        // не помогло для сортировки
+    {                  
+        int CompareTo(object o);
     }
 }

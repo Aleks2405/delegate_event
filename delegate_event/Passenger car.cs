@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace delegate_event
 {
-    class Passenger_car :ICar, IComparable
+    class Passenger_car :ICar
     {
         public int Count { get; set; } = 0;
         public int a;
@@ -53,10 +53,10 @@ namespace delegate_event
             return $"{Name}";
         }
 
-        public int CompareTo(object? o)
-        {
-            if (o is Passenger_car a) return Count.CompareTo(a.Count);
-            else throw new ArgumentException("Некорректное значение параметра");
-        }
+        //public int CompareTo(object o)
+        //{                                                                          /*пока убрали так как не работает*/ 
+        //    if (o is ICar a) return Count.CompareTo(a.Count);
+        //    else throw new ArgumentException("Некорректное значение параметра");
+        //}
     }
 }
