@@ -8,7 +8,7 @@ namespace delegate_event
 {
      interface ICar
     {
-        int Count { get; set; }
+        int Countt { get; set; }
         string Name { get; }
         int speed();
         int casd();

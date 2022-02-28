@@ -8,24 +8,16 @@ namespace delegate_event
 {
     class Final
     {
-        public delegate void Number();
-        public event Number Shethic; 
+         
         public int Const { get; } = 0;  // точка старта
        
         private int temp = 4; /*Машин учавствующих в гонке*/
 
-        public void IIII()
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                Console.WriteLine(i);
-                Shethic?.Invoke();
-            }
-        }
+       
 
         public Final()
         {
-            this.temp = temp;
+            //this.temp = temp;
 
             var a = new List<ICar>()
             {
@@ -34,14 +26,12 @@ namespace delegate_event
                 new Truck(Const),
                 new Bus(Const)
             };
-             for (int i = 0; i < 4; i++)
+             for (int i = 0; i < a.Count; i++)
             {
-                a = a.OrderBy(b => b.Count).ToList(); // метод сортировки найден теперь красиво
+                a = a.OrderBy(b => b.Countt).ToList(); // метод сортировки найден теперь красиво
 
             }
-            Shethic += Final_Shethic;       // нужно обьяснения( желательно показать на примере кода биться саму уже не хватает нервов )
-                                            // я понял зачем нужны делегаты но не понимаю зачем нужны события они все только усложняют      
-
+            
             foreach (ICar asa in a)
             {
 
@@ -51,9 +41,6 @@ namespace delegate_event
             
         }
 
-        private void Final_Shethic()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

@@ -7,22 +7,8 @@ namespace delegate_event
 
         static void Main(string[] args)
         {
-
-
             Final a = new Final();
-
-
-
-
-
-
-
-
-
-
-        }
-
-      
+        }      
     }
 }
    

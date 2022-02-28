@@ -8,10 +8,10 @@ namespace delegate_event
 {
     class Passenger_car :ICar
     {
-        public int Count { get; set; } = 0;
+        public int Countt { get; set; } = 0;
         public int a;
-        public delegate void POexali();
-        public event POexali op = null;
+        public delegate void POexali(int a);
+        public event POexali op;
         public int skorost { get; } = 100;
 
         public string Name { get;  } = "Passenger car"; 
@@ -22,8 +22,8 @@ namespace delegate_event
             if (a == 0)
             {
                 /*POexali op = new(poexali)  убрал делегат использую сабытие*/
-                poexali();
-                op?.Invoke();
+                poexali(); 
+                op?.Invoke(Countt);  //наверное разобрался если так то я понял, ну с учетом что мы вызываем функцию и нечего в нее не передаем
             }
             else
             {
@@ -31,13 +31,14 @@ namespace delegate_event
             }
                               
         }
-        public void poexali ()
+        public int poexali ()   //расчет скарости автомобиля
         {            
                 while (a <= skorost)          
                 {
                     a += speed();                    
-                    Count++;
-                }           
+                    Countt++;
+                }
+            return Countt++;
         }
        
      public int speed ()             // задаем скорость автомобиля
@@ -47,7 +48,7 @@ namespace delegate_event
         }
         public int casd()    // возвращаем значения нашего счетика у кого меньше тот и выиграл
         {
-            return Count;
+            return Countt;
         }
         public override string ToString()
         {
